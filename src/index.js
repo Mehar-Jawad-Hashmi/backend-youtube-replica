@@ -1,11 +1,45 @@
-function checkEvenOdd(num) {
-  if (num % 2 === 0) {
-      return `${num} is even.`;
-  } else {
-      return `${num} is odd.`;
-  }
-}
+// require('dotenv').config({path: "./env"})
+import dotenv from "dotenv";
+import connectDB from "./db/index.js";
 
-// Example usage
-console.log(checkEvenOdd(4)); // Output: 4 is even.
-console.log(checkEvenOdd(7)); // Output: 7 is odd.
+dotenv.config({
+  path: "./env",
+});
+
+connectDB();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import express from "express";
+const app = express()
+
+(async () => {
+  try {
+    await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`);
+    app.on("error", (error)=>{
+      console.log("ERROR: ", error)
+      throw error
+    })
+
+app.listen(process.env.PORT, ()=>{
+  console.log(`App is listening on port ${process.env.PORT}`)
+})
+
+  } catch (err) {
+    console.error("ERROR: ", err);
+    throw err;
+  }
+})();
+*/
